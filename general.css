@@ -1,0 +1,63 @@
+@font-face {
+  src:url('BarlowSemiCondensed-Medium.ttf');
+  font-family: 'barlow';
+}
+
+@font-face {
+  src:url('BarlowSemiCondensed-Bold.ttf');
+  font-family: 'barlow-bold';
+}
+
+body {
+  font-family: 'barlow';
+  position: relative;
+  font-size: 20px;
+  align-items: center;
+}
+
+body .tab1, .tab2, .tab3 {
+  font-family: 'barlow-bold';
+  writing-mode: vertical-rl;
+  background-color: #c8c8c8;
+  position: relative;
+  display: block;
+  left: -8px;
+  top: 100px;
+  margin-top: -22px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: #b4b3b3;
+}
+
+a {
+  text-decoration: none;
+  color:#30525b;
+}
+
+.img1 img {
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #65625e;
+}
+
+.myHead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.myTitle {
+  padding-left: 20px;
+}
+
+.myTitle h2 {
+  margin-bottom: -1px;
+}
