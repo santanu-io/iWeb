@@ -61,8 +61,10 @@ a {
 .body2 {
   display: grid;
   grid-template-columns: auto auto;
-  margin: 20px 50px 75px;
-  grid-gap: 20px;
+  margin-left: 20%;
+  width: calc(50em - 50px);
+  grid-gap: 30px;
+
 }
 
 .item1 {
