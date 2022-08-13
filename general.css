@@ -15,11 +15,16 @@ body {
   align-items: center;
 }
 
+.body1{
+  position: fixed;
+}
+
 body .tab1, .tab2, .tab3, .tab4 {
   font-family: 'barlow-bold';
   writing-mode: vertical-rl;
   background-color: #c8c8c8;
   position: relative;
+  z-index: 1;
   display: block;
   left: -8px;
   top: 100px;
@@ -64,4 +69,9 @@ a {
 .myTitle h2 {
   font-size: 18px;
   margin-bottom: -1px;
+}
+
+.sectionHead .section1, {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
 }
