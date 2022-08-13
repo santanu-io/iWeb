@@ -61,16 +61,12 @@ a {
 
 .body2 {
   display: grid;
-  grid-template-columns: 1fr;
-  margin-left: 20%;
-  margin-right: 20%;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
   grid-gap: 1rem;
 }
 
-@media (min-width: 300px) {
-  .body2 {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
 
 .item1 {
   border-bottom: 2px solid #252525;
