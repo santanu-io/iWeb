@@ -180,17 +180,17 @@ a {
   grid-template-rows: 140px auto auto auto;
   margin-top: -8px;
 }
-/*
-@media only screen
-  and (max-width: 1200px) {
+
+@media only screen and (max-width: 1200px) {
   .grid {
       grid-template-columns: 50px 0px 1fr 8fr 0px;
     }
   }
-*/
+
 /* smaller screen attributes*/
 @media only screen
-  and (max-width: 1400px) {
+  and (max-width: 1200px)
+  and (-webkit-max-device-pixel-ratio: 1.1) {
   .grid {
     grid-template-columns: 50px 1fr;
     grid-template-rows: auto 20px auto 20px auto 20px auto;
