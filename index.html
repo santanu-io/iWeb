@@ -1,49 +1,98 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <title> santanu.io </title>
+  <link rel="stylesheet" style="text/css" href="general.css"/>
+  <link rel="icon" type="image/x-icon" href="misc/ficon.svg">
+</head>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title> santanu.io </title>
-    <link rel="stylesheet" style="text/css" href="general.css"/>
-  </head>
+<body>
+  <div class="grid">
+    <div id="stickyTabs"></div>
+    <div id="spaceLeft"></div> <!-- blank spaces -->
+    <div id="spaceRight"></div> <!-- blank spaces -->
+    <div id="headerTitle"></div> <!-- blank spaces -->
+    <div id="headerBody">
+      <div id="nameText"><h2>santanu</h2><h3>.io</h3></div>
+      <img src="ss01.jpg">
+    </div> <!-- title bar -->
 
-  <body>
-    <div class="item1">
-      <div class="img1" style="float: left">
-        <img src="ss01.jpg" height="50">
-      </div>
+    <section id="bioTitle"> Bio </section>
+    <div id="bioBody">
+      <H5>Selected Articles</H5>
+      <hr style="width: 50px" align="left">
+      Phys. Rev. Research 2, 043108 (2020)
       <br>
-      <div class="myTitle">
-        <h2>SANTANU</h2>
-      </div>
+      Phase transition between localized and non-localized failure during fracture growth can be first or second order depending on the type of the system disorder
+      <button onclick="myFunction()">Blue</button>
     </div>
 
-<div class="body1">
-    <div class="tab1"> <!-- Sticky -->
-      <a href="">BIO</a>
-    </div>
-    <br>
-    <div class="tab2">
-      <a href="">RESEARCH</a>
-    </div>
-    <br>
-    <div class="tab3">
-      <a href="">CODES</a>
-    </div>
-    <br>
-    <div class="tab4">
-      <a href="">CREATIONS</a>
-    </div>
-  </div>
+    <section id="researchTitle"> Research </section>
+    <div id="researchBody">
+      In late 1886, Tesla met Alfred S. Brown, a Western Union superintendent, and New York attorney Charles Fletcher Peck.[67] The two men were experienced in setting up companies and promoting inventions and patents for financial gain.[68] Based on Tesla's new ideas for electrical equipment, including a thermo-magnetic motor idea,[69] they agreed to back the inventor financially and handle his patents. Together they formed the Tesla Electric Company in April 1887, with an agreement that profits from generated patents would go 1⁄3 to Tesla, 1⁄3 to Peck and Brown, and 1⁄3 to fund development.[68] They set up a laboratory for Tesla at 89 Liberty Street in Manhattan, where he worked on improving and developing new types of electric motors, generators, and other devices.
 
-<div class="body2"> <!-- Main data -->
-  <div class="item1">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-  </div>
-  <div class="item2">
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-  </div>
-</div>
+      In 1887, Tesla developed an induction motor that ran on alternating current (AC), a power system format that was rapidly expanding in Europe and the United States because of its advantages in long-distance, high-voltage transmission. The motor used polyphase current, which generated a rotating magnetic field to turn the motor (a principle that Tesla claimed to have conceived in 1882).[70][71][72] This innovative electric motor, patented in May 1888, was a simple self-starting design that did not need a commutator, thus avoiding sparking and the high maintenance of constantly servicing and replacing mechanical brushes.[73][74]
 
-  </body>
+      Along with getting the motor patented, Peck and Brown arranged to get the motor publicized, starting with independent testing to verify it was a functional improvement, followed by press releases sent to technical publications for articles to run concurrently with the issue of the patent.[75] Physicist William Arnold Anthony (who tested the motor) and Electrical World magazine editor Thomas Commerford Martin arranged for Tesla to demonstrate his AC motor on 16 May 1888 at the American Institute of Electrical Engineers.[75][76] Engineers working for the Westinghouse Electric & Manufacturing Company reported to George Westinghouse that Tesla had a viable AC motor and related power system—something Westinghouse needed for the alternating current system he was already marketing. Westinghouse looked into getting a patent on a similar commutator-less, rotating magnetic field-based induction motor developed in 1885 and presented in a paper in March 1888 by Italian physicist Galileo Ferraris, but decided that Tesla's patent would probably control the market.[77][78]
+      Tesla's AC dynamo-electric machine (AC electric generator) in an 1888 U.S. Patent 390,721
+
+      In July 1888, Brown and Peck negotiated a licensing deal with George Westinghouse for Tesla's polyphase induction motor and transformer designs for $60,000 in cash and stock and a royalty of $2.50 per AC horsepower produced by each motor. Westinghouse also hired Tesla for one year for the large fee of $2,000 ($60,300 in today's dollars[79]) per month to be a consultant at the Westinghouse Electric & Manufacturing Company's Pittsburgh labs.[80]
+
+      During that year, Tesla worked in Pittsburgh, helping to create an alternating current system to power the city's streetcars. He found it a frustrating period because of conflicts with the other Westinghouse engineers over how best to implement AC power. Between them, they settled on a 60-cycle AC system that Tesla proposed (to match the working frequency of Tesla's motor), but they soon found that it would not work for streetcars, since Tesla's induction motor could run only at a constant speed. They ended up using a DC traction motor instead.[81][82]
+    </div>
+
+    <section id="codesTitle"> Codes </section>
+    <div id="codesBody">
+      # Sourcing Powerlevel10k
+      source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+      if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+      source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+      fi
+
+      export ZSH=$HOME/.oh-my-zsh
+
+      plugins=(git adb pip)
+
+      source $ZSH/oh-my-zsh.sh
+
+      # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+      # Fuzzy search
+      [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+      # load zgenom
+      source "${HOME}/.zgenom/zgenom.zsh"
+
+      # Update every 3 days
+      zgenom autoupdate 3
+
+      # if the init script doesn't exist
+      if ! zgenom saved; then
+
+      # Fish-like autosuggestions for zsh
+      zgenom load zsh-users/zsh-history-substring-search
+      # Includes syntax highlighting
+      zgenom load zsh-users/zsh-syntax-highlighting
+      #Zsh Completions
+      zgenom load zsh-users/zsh-completions
+      # Enhancd
+      zgenom load b4b4r07/enhancd
+      # Auto-pair
+      zgenom load hlissner/zsh-autopair
+      # autosuggestions should be loaded last
+      zgenom load tarruda/zsh-autosuggestions
+
+      # generate the init script from plugins above
+      zgenom save
+      fi
+
+      # Alias
+      alias ls='colorls -a'
+      alias lt='colorls --tree'
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
 </html>

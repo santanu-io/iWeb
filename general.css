@@ -1,78 +1,209 @@
-@font-face {
-  src:url('BarlowSemiCondensed-Medium.ttf');
-  font-family: 'barlow';
+/* Colors*/
+:root{
+  --bgColor: #f1efe9;
+  --bodyFontColor: #000000;
+  --listItemColor: #dedbd3;
+  --listItemBorderColor: #818181;
+  --titleColor: #413d32;
+  --defLinkColor: rgba(#3d494d, 0.94);
+  --hoverandActiveColor: #ffffff;
+  --linkActiveColor: #525252;
 }
 
+/* Fonts imported*/
 @font-face {
-  src:url('BarlowSemiCondensed-Bold.ttf');
+  src: url('fonts/BarlowSemiCondensed-Thin.ttf');
+  font-family: 'barlow-thin';
+}
+@font-face {
+  src: url('fonts/BarlowSemiCondensed-Regular.ttf');
+  font-family: 'barlow-regular';
+}
+@font-face {
+  src: url('fonts/BarlowSemiCondensed-Medium.ttf');
+  font-family: 'barlow-medium';
+}
+@font-face {
+  src: url('fonts/BarlowSemiCondensed-SemiBold.ttf');
+  font-family: 'barlow-semibold';
+}
+@font-face {
+  src: url('fonts/BarlowSemiCondensed-Bold.ttf');
   font-family: 'barlow-bold';
 }
 
+html {scroll-behavior: smooth;}
 body {
-  font-family: 'barlow';
-  position: relative;
-  font-size: 20px;
+  font-family: 'barlow-regular';
+  font-size: 27px;
   align-items: center;
+  background-color: var(--bgColor);
+  color: var(--bodyFontColor);
+
 }
 
-.body1{
-  position: fixed;
+/* grid construction*/
+.grid {
+  display: grid;
+  line-height: 1.5;
+  grid-template-areas:
+  "stickyTabs spaceLeft headerTitle headerBody spaceRight"
+  "stickyTabs spaceLeft bioTitle bioBody spaceRight"
+  "stickyTabs spaceLeft researchTitle researchBody spaceRight"
+  "stickyTabs spaceLeft codesTitle codesBody spaceRight";
+  gap: 10px;
+  row-gap: 40px;
+  grid-template-columns: 50px 58px 1fr 8fr 96px;
+  grid-template-rows: 140px auto auto auto;
+  margin-top: -8px;
 }
 
-body .tab1, .tab2, .tab3, .tab4 {
-  font-family: 'barlow-bold';
-  writing-mode: vertical-rl;
-  background-color: #c8c8c8;
-  position: relative;
-  z-index: 1;
+/* grid area assignments */
+#stickyTabs {grid-area: stickyTabs;}
+#spaceLeft {grid-area: spaceLeft;}
+#spaceRight {grid-area: spaceRight;}
+#headerTitle {grid-area: headerTitle;}
+#headerBody {grid-area: headerBody;}
+#bioTitle {grid-area: bioTitle;}
+#researchTitle {grid-area: researchTitle;}
+#codesTitle {grid-area: codesTitle;}
+#bioBody {grid-area: bioBody;}
+#researchBody {grid-area: researchBody;}
+#codesBody {grid-area: codesBody;}
+
+/* container for the sticky tabs*/
+#stickyTabs {
   display: block;
-  left: -8px;
-  top: 100px;
-  margin-top: -22px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-style: ridge;
-  border-width: 1px;
-  border-color: #b4b3b3;
-  transition: width 10s linear 10s;
+  position: fixed;
+  font-size: 28px;
+  height: 100%;
+  background: #f9f7f1;
+  margin-left: -5px;
+  width: 50px;
 }
 
+/* attributes for the header bar container*/
+#headerBody {
+  display: flex;
+  padding-left: 0px;
+  color: var(--titleColor);
+  border-left: 8px #000000 solid;
+}
+
+/* font size for the title bar*/
+#nameText{
+  display: flex;
+  margin-top: 28px;
+  padding-left: 30px;
+}
+#nameText > h3 {
+  font-family: 'barlow-thin';
+  font-size: calc(5vmin + 10px);
+  margin-top: 0;
+}
+#nameText > h2 {
+  font-family: 'barlow-medium';
+  font-size: calc(5vmin + 10px);
+  margin-top: 0;
+}
+
+/* attributes for the image inside the header */
+#headerBody > img {
+  border-radius: 50%;
+  border: solid 2px #65625e;
+  height: calc(5vmin + 60px);
+  margin-top: calc(2vh + 10px);
+  margin-left: auto;
+}
+
+/* attributes for the different segments */
+#bioBody, #researchBody, #codesBody {text-align: justify;}
+#codesTitle, #researchTitle, #bioTitle {
+  font-family: 'barlow-medium';
+  text-align: right;
+  padding-right: 20px;
+}
+/* attributes for each sticky tab list items */
+li {
+  font-family: 'barlow-medium';
+  position: relative;
+  display: block;
+  background-color: var(--listItemColor);
+  left: -45px;
+  top: 10vh;
+  padding: 26px 6px 26px;
+  writing-mode: vertical-rl;
+  transition: all 0.30s ease-in-out;
+  border-top: 1px var(--listItemBorderColor) solid;
+  border-bottom: 1px var(--listItemBorderColor) solid;
+}
+/* size for the body*/
+section {font-size: 30px;}
+
+/* vertical line attributes*/
+#vl {
+  border-right: 1.5px #9d9d9d solid;
+  position: absolute;
+  left: 49px;
+  height: 200vh;
+}
+
+H5 {margin-top: 0px; font-size: 30px;}
+
+/* default link attributes*/
 a {
   text-decoration: none;
-  color:#2f6a79;
+  color: var(--defLinkColor);
+  transition: all 0.30s ease-in;
 }
 
-.img1 img {
-  margin-top: 20px;
-  margin-right: 10px;
-  margin-left: 40px;
-  border-radius: 50%;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #65625e;
+/* sticky tabs hover link attribute*/
+#stickyTabs > ul > li:hover > a {
+  color: var(--hoverandActiveColor);
+  transition: all 0.30s ease-in;
 }
 
-.myTitle h2 {
-  margin-top: 2px;
-  font-size: minmax(200px, 4vw);
+/* sticky tabs hover list attribute*/
+#stickyTabs > ul > li:hover {
+  background-color: var(--linkActiveColor);
+  transition: all 0.30s ease-in;
 }
 
-.body2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-  margin-left: 20px;
-  margin-right: 20px;
-  grid-gap: 1rem;
+/* sticky tabs hover scroll ~ javascript*/
+#stickyTabs > ul > li.active a {
+  color: var(--hoverandActiveColor);
+  transition: all 0.30s ease-in;
+}
+
+#stickyTabs > ul > li.active {
+  background-color: var(--linkActiveColor);
+  transition: all 0.30s ease-in;
 }
 
 
-.item1 {
-  border-bottom: 2px solid #252525;
-}
+@media only screen and (min-width: 1350px) {
+  .grid {
+      grid-template-columns: 50px 1fr 120px 960px 1.67fr;
+    }
+  }
 
-.item2 {
-  border-left: 2px solid #8c8c8c;
-  padding-left: 10px;
+/* smaller screen attributes*/
+@media only screen and (max-width: 800px) {
+  .grid {
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: auto 20px auto 20px auto 20px auto;
+    grid-template-areas:
+    'stickyTabs headerBody'
+    'stickyTabs bioTitle'
+    'stickyTabs bioBody'
+    'stickyTabs researchTitle'
+    'stickyTabs researchBody'
+    'stickyTabs codesTitle'
+    'stickyTabs codesBody';
+    row-gap: 40px;
+  }
+  #codesTitle, #researchTitle, #bioTitle {
+    margin-top: 0px;
+    text-align: left;
+  }
 }
