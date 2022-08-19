@@ -181,7 +181,9 @@ a {
   margin-top: -8px;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen
+  and (max-width: 1200px)
+  and (-webkit-max-device-pixel-ratio: 1) {
   .grid {
       grid-template-columns: 50px 0px 1fr 8fr 0px;
     }
