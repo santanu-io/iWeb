@@ -42,22 +42,6 @@ body {
 
 }
 
-/* grid construction*/
-.grid {
-  display: grid;
-  line-height: 1.5;
-  grid-template-areas:
-  "stickyTabs spaceLeft headerTitle headerBody spaceRight"
-  "stickyTabs spaceLeft bioTitle bioBody spaceRight"
-  "stickyTabs spaceLeft researchTitle researchBody spaceRight"
-  "stickyTabs spaceLeft codesTitle codesBody spaceRight";
-  gap: 10px;
-  row-gap: 40px;
-  grid-template-columns: 50px 58px 1fr 8fr 96px;
-  grid-template-rows: 140px auto auto auto;
-  margin-top: -8px;
-}
-
 /* grid area assignments */
 #stickyTabs {grid-area: stickyTabs;}
 #spaceLeft {grid-area: spaceLeft;}
@@ -180,10 +164,26 @@ a {
   transition: all 0.30s ease-in;
 }
 
+/* grid construction*/
+.grid {
+  display: grid;
+  line-height: 1.5;
+  grid-template-areas:
+  "stickyTabs spaceLeft headerTitle headerBody spaceRight"
+  "stickyTabs spaceLeft bioTitle bioBody spaceRight"
+  "stickyTabs spaceLeft researchTitle researchBody spaceRight"
+  "stickyTabs spaceLeft codesTitle codesBody spaceRight";
+  gap: 10px;
+  row-gap: 40px;
+  /*grid-template-columns: 50px 58px 1fr 8fr 96px;*/
+  grid-template-columns: 50px 1fr 120px 960px 1.8fr;
+  grid-template-rows: 140px auto auto auto;
+  margin-top: -8px;
+}
 
-@media only screen and (min-width: 1350px) {
+@media only screen and (max-width: 1200px) {
   .grid {
-      grid-template-columns: 50px 1fr 120px 960px 1.67fr;
+      grid-template-columns: 50px 0px 1fr 8fr 0px;
     }
   }
 
