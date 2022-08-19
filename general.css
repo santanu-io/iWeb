@@ -181,18 +181,10 @@ a {
   margin-top: -8px;
 }
 
-@media only screen
-  and (max-width: 1200px)
-  and (-webkit-max-device-pixel-ratio: 1) {
-  .grid {
-      grid-template-columns: 50px 0px 1fr 8fr 0px;
-    }
-  }
-
 /* smaller screen attributes*/
 @media only screen
   and (max-width: 1200px)
-  and (-webkit-min-device-pixel-ratio: 1.1) {
+  and (-webkit-max-device-pixel-ratio: 1.1) {
   .grid {
     grid-template-columns: 50px 1fr;
     grid-template-rows: auto 20px auto 20px auto 20px auto;
