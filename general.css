@@ -176,7 +176,7 @@ a {
 /* grid construction*/
 .grid {
   display: grid;
-  gap: 10px;
+  column-gap: 10px;
   row-gap: 40px;
   grid-template-columns: 50px 1fr 130px 1040px 2fr;
   grid-template-rows: 140px auto auto auto;
@@ -216,6 +216,7 @@ a {
 /* Mobile Phones */
 @media screen and (max-device-width: 480px) {
   .grid {
+    column-gap: 0px;
     grid-template-columns: 100px 1fr;
     grid-template-rows: auto 20px auto 20px auto 20px auto;
     grid-template-areas:
