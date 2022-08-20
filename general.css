@@ -83,7 +83,7 @@ body {
   background: #f9f7f1;
   margin-left: -5px;
   width: 50px;
-  border-right: 2px #9d9d9d solid;
+  border-right: 2px #090909 solid;
 }
 
 li {
@@ -92,7 +92,6 @@ li {
   display: block;
   background-color: var(--listItemColor);
   left: -42px;
-  top: 8vh;
   padding: 24px 7.5px 30px;
   writing-mode: vertical-rl;
   transition: all 0.30s ease-in-out;
@@ -234,16 +233,9 @@ a {
   }
   #stickyTabs {
     font-size: 48px;
-    width: 78px;
+    width: 79px;
   }
-
   li {
-    left: -42px;
-    top: 8vh;
-    padding: 24px 10px 30px;
-    writing-mode: vertical-rl;
-    transition: all 0.30s ease-in-out;
-    border-top: 1px var(--listItemBorderColor) solid;
-    border-bottom: 1px var(--listItemBorderColor) solid;
+    padding: 24px 11px 30px;
   }
 }

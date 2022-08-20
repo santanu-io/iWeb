@@ -1,8 +1,8 @@
 var html = '<ul>\
-              <li class="bioTitle"><a href="#bioTitle">: bio</a></li>\
-              <li class="researchTitle"><a href="#researchTitle">: research</a></li>\
-              <li class="codesTitle"><a href="#codesTitle">: codes</a></li>\
-              <li class="mediaTitle"><a href="#mediaTitle">media</a></li>\
+              <li class="bioMenu"><a href="#bioTitle">: bio</a></li>\
+              <li class="researchMenu"><a href="#researchTitle">: research</a></li>\
+              <li class="codesMenu"><a href="#codesTitle">: codes</a></li>\
+              <li class="mediaMenu"><a href="#mediaTitle">media</a></li>\
             </ul>';
 
 document.getElementById('stickyTabs').innerHTML = html;
