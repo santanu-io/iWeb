@@ -10,6 +10,12 @@
   --linkActiveColor: #525252;
 }
 
+fontSect {font-size: calc(28px + 0.8vh); font-family: 'barlow-thin';}
+fontHead {font-size: calc(28px + 0.6vh); font-family: 'barlow-semibold';}
+fontList {font-size: calc(18px + 0.5vh); font-family: 'barlow-medium';}
+fontBody {font-size: calc(16px + 0.4vh); font-family: 'barlow-regular';}
+fontMini {font-size: calc(12px + 0.2vh); font-family: 'barlow-thin';}
+
 /* Fonts imported*/
 @font-face {
   src: url('fonts/BarlowSemiCondensed-Thin.ttf');
@@ -32,7 +38,10 @@
   font-family: 'barlow-bold';
 }
 
-html {scroll-behavior: smooth;}
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'barlow-regular';
   font-size: 27px;
@@ -54,15 +63,41 @@ body {
 #researchBody {grid-area: researchBody;}
 #codesBody {grid-area: codesBody;}
 
+
+/* vertical line attributes*/
+/*
+#vl {
+  border-right: 1.5px #9d9d9d solid;
+  position: absolute;
+  left: 49px;
+  height: 200vh;
+}
+*/
+
 /* container for the sticky tabs*/
 #stickyTabs {
   display: block;
   position: fixed;
-  font-size: 28px;
+  font-size: 30px;
   height: 100%;
   background: #f9f7f1;
   margin-left: -5px;
   width: 50px;
+  border-right: 2px #9d9d9d solid;
+}
+
+li {
+  font-family: 'barlow-medium';
+  position: relative;
+  display: block;
+  background-color: var(--listItemColor);
+  left: -42px;
+  top: 8vh;
+  padding: 24px 7.5px 30px;
+  writing-mode: vertical-rl;
+  transition: all 0.30s ease-in-out;
+  border-top: 1px var(--listItemBorderColor) solid;
+  border-bottom: 1px var(--listItemBorderColor) solid;
 }
 
 /* attributes for the header bar container*/
@@ -107,31 +142,6 @@ body {
   padding-right: 20px;
 }
 /* attributes for each sticky tab list items */
-li {
-  font-family: 'barlow-medium';
-  position: relative;
-  display: block;
-  background-color: var(--listItemColor);
-  left: -45px;
-  top: 10vh;
-  padding: 26px 6px 26px;
-  writing-mode: vertical-rl;
-  transition: all 0.30s ease-in-out;
-  border-top: 1px var(--listItemBorderColor) solid;
-  border-bottom: 1px var(--listItemBorderColor) solid;
-}
-/* size for the body*/
-section {font-size: 30px;}
-
-/* vertical line attributes*/
-#vl {
-  border-right: 1.5px #9d9d9d solid;
-  position: absolute;
-  left: 49px;
-  height: 200vh;
-}
-
-H5 {margin-top: 0px; font-size: 30px;}
 
 /* default link attributes*/
 a {
@@ -166,29 +176,25 @@ a {
 /* grid construction*/
 .grid {
   display: grid;
-  line-height: 1.5;
+  gap: 10px;
+  row-gap: 40px;
+  grid-template-columns: 50px 1fr 130px 1040px 2fr;
+  grid-template-rows: 140px auto auto auto;
+  margin-top: -8px;
   grid-template-areas:
   "stickyTabs spaceLeft headerTitle headerBody spaceRight"
   "stickyTabs spaceLeft bioTitle bioBody spaceRight"
   "stickyTabs spaceLeft researchTitle researchBody spaceRight"
   "stickyTabs spaceLeft codesTitle codesBody spaceRight";
-  gap: 10px;
-  row-gap: 40px;
-  grid-template-columns: 50px 1fr 120px 960px 1.8fr;
-  grid-template-rows: 140px auto auto auto;
-  margin-top: -8px;
 }
-/*
-@media only screen and (max-width: 1200px) {
+
+@media screen and (max-width: 1340px) {
   .grid {
-      grid-template-columns: 50px 0px 1fr 8fr 0px;
+      grid-template-columns: 50px 5px 1fr 8fr 20px;
     }
-  }
-*/
-/*   smaller screen attributes*/
-@media only screen
-  and (max-width: 1200px)
-  and (-webkit-max-device-pixel-ratio: 1.1) {
+}
+
+@media screen and (max-width: 600px) {
   .grid {
     grid-template-columns: 50px 1fr;
     grid-template-rows: auto 20px auto 20px auto 20px auto;
@@ -200,10 +206,43 @@ a {
     'stickyTabs researchBody'
     'stickyTabs codesTitle'
     'stickyTabs codesBody';
-    row-gap: 40px;
   }
   #codesTitle, #researchTitle, #bioTitle {
     margin-top: 0px;
     text-align: left;
+  }
+}
+
+/* Mobile Phones */
+@media screen and (max-device-width: 480px) {
+  .grid {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto 20px auto 20px auto 20px auto;
+    grid-template-areas:
+    'stickyTabs headerBody'
+    'stickyTabs bioTitle'
+    'stickyTabs bioBody'
+    'stickyTabs researchTitle'
+    'stickyTabs researchBody'
+    'stickyTabs codesTitle'
+    'stickyTabs codesBody';
+  }
+  #codesTitle, #researchTitle, #bioTitle {
+    margin-top: 0px;
+    text-align: left;
+  }
+  #stickyTabs {
+    font-size: 48px;
+    width: 78px;
+  }
+
+  li {
+    left: -42px;
+    top: 8vh;
+    padding: 24px 10px 30px;
+    writing-mode: vertical-rl;
+    transition: all 0.30s ease-in-out;
+    border-top: 1px var(--listItemBorderColor) solid;
+    border-bottom: 1px var(--listItemBorderColor) solid;
   }
 }
