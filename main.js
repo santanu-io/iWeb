@@ -1,8 +1,8 @@
 var html = '<ul>\
-              <li class="bioMenu"><a href="#bioTitle">: bio</a></li>\
-              <li class="researchMenu"><a href="#researchTitle">: research</a></li>\
-              <li class="codesMenu"><a href="#codesTitle">: codes</a></li>\
-              <li class="mediaMenu"><a href="#mediaTitle">media</a></li>\
+              <li class="bioTitle"><a href="#bioTitle">bio</a></li>\
+              <li class="researchTitle"><a href="#researchTitle">research</a></li>\
+              <li class="codesTitle"><a href="#codesTitle">codes</a></li>\
+              <li class="mediaTitle"><a href="#mediaTitle">media</a></li>\
             </ul>';
 
 document.getElementById('stickyTabs').innerHTML = html;
@@ -23,12 +23,13 @@ window.addEventListener('scroll', ()=> {
   navLi.forEach( li => {
     li.classList.remove('active');
     if(li.classList.contains(current)){
-      li.classList.add('active')
+      li.classList.add('active');
     }
   })
 })
 
-var elements = document.querySelectorAll("#bio,#bioTitle,#research,#researchTitle,#codes,#codesTitle");
+
+var elements = document.querySelectorAll("#bioTitle,#bioBody,#researchTitle,#researchBody,#codesTitle,#codesBody");
 
 var url = 'newData.txt';
 var newText;

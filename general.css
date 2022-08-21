@@ -2,12 +2,13 @@
 :root{
   --bgColor: #f1efe9;
   --bodyFontColor: #000000;
-  --listItemColor: #dedbd3;
+  --listItemColor: #c2bfb4;
   --listItemBorderColor: #818181;
   --titleColor: #413d32;
   --defLinkColor: rgba(#3d494d, 0.94);
   --hoverandActiveColor: #ffffff;
   --linkActiveColor: #525252;
+  --stickyTabsBackgroundColor: #f6f5f1;
 }
 
 fontSect {font-size: calc(28px + 0.8vh); font-family: 'barlow-thin';}
@@ -51,17 +52,17 @@ body {
 }
 
 /* grid area assignments */
-#stickyTabs {grid-area: stickyTabs;}
-#spaceLeft {grid-area: spaceLeft;}
-#spaceRight {grid-area: spaceRight;}
-#headerTitle {grid-area: headerTitle;}
-#headerBody {grid-area: headerBody;}
-#bioTitle {grid-area: bioTitle;}
-#researchTitle {grid-area: researchTitle;}
-#codesTitle {grid-area: codesTitle;}
-#bioBody {grid-area: bioBody;}
-#researchBody {grid-area: researchBody;}
-#codesBody {grid-area: codesBody;}
+#stickyTabs {grid-area: stickyTabs}
+#spaceLeft {grid-area: spaceLeft}
+#spaceRight {grid-area: spaceRight}
+#headerTitle {grid-area: headerTitle}
+#headerBody {grid-area: headerBody}
+#bioTitle {grid-area: bioTitle}
+#researchTitle {grid-area: researchTitle}
+#codesTitle {grid-area: codesTitle}
+#bioBody {grid-area: bioBody}
+#researchBody {grid-area: researchBody}
+#codesBody {grid-area: codesBody}
 
 
 /* vertical line attributes*/
@@ -78,16 +79,16 @@ body {
 #stickyTabs {
   display: block;
   position: fixed;
-  font-size: 30px;
+  font-size: 28px;
   height: 100%;
-  background: #f9f7f1;
-  margin-left: -5px;
-  width: 50px;
-  border-right: 2px #090909 solid;
+  background: var(--stickyTabsBackgroundColor);
+  margin-left: -8px;
+  width: 47px;
+  border-right: 1px #090909 solid;
 }
 
 li {
-  font-family: 'barlow-medium';
+  font-family: 'barlow-regular';
   position: relative;
   display: block;
   background-color: var(--listItemColor);
@@ -99,38 +100,37 @@ li {
   border-bottom: 1px var(--listItemBorderColor) solid;
 }
 
-/* attributes for the header bar container*/
+/* HEADER */
+fhA {font-family: 'barlow-thin'; font-size: calc(5vmin + 24px);}
+fhB {font-family: 'barlow-medium'; font-size: calc(2vmin + 16px);}
+
+#headerTitle{
+  margin-right: 20px;
+  border-right: 8px #000000 solid;
+}
+
 #headerBody {
   display: flex;
   padding-left: 0px;
   color: var(--titleColor);
-  border-left: 8px #000000 solid;
+  align-items: flex-end;
 }
 
-/* font size for the title bar*/
-#nameText{
-  display: flex;
-  margin-top: 28px;
-  padding-left: 30px;
-}
-#nameText > h3 {
-  font-family: 'barlow-thin';
-  font-size: calc(5vmin + 10px);
-  margin-top: 0;
-}
-#nameText > h2 {
-  font-family: 'barlow-medium';
-  font-size: calc(5vmin + 10px);
-  margin-top: 0;
+#headerText > hr{
+  width: 30px;
+  margin-left: 0;
+  margin-top: 30px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  background-color: #1b180d;
 }
 
-/* attributes for the image inside the header */
 #headerBody > img {
   border-radius: 50%;
   border: solid 2px #65625e;
-  height: calc(5vmin + 60px);
-  margin-top: calc(2vh + 10px);
+  height: calc(6vmin + 50px);
   margin-left: auto;
+  margin-top: auto;
 }
 
 /* attributes for the different segments */
@@ -177,8 +177,8 @@ a {
   display: grid;
   column-gap: 10px;
   row-gap: 40px;
-  grid-template-columns: 50px 1fr 130px 1040px 2fr;
-  grid-template-rows: 140px auto auto auto;
+  grid-template-columns: 46px 1fr 130px 1040px 2fr;
+  grid-template-rows: 150px auto;
   margin-top: -8px;
   grid-template-areas:
   "stickyTabs spaceLeft headerTitle headerBody spaceRight"
@@ -189,14 +189,13 @@ a {
 
 @media screen and (max-width: 1340px) {
   .grid {
-      grid-template-columns: 50px 5px 1fr 8fr 20px;
+      grid-template-columns: 46px 5px 1fr 8fr 20px;
     }
 }
 
 @media screen and (max-width: 600px) {
   .grid {
-    grid-template-columns: 50px 1fr;
-    grid-template-rows: auto 20px auto 20px auto 20px auto;
+    grid-template-columns: 46px 1fr;
     grid-template-areas:
     'stickyTabs headerBody'
     'stickyTabs bioTitle'
@@ -215,9 +214,9 @@ a {
 /* Mobile Phones */
 @media screen and (max-device-width: 480px) {
   .grid {
-    column-gap: 0px;
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: auto 20px auto 20px auto 20px auto;
+    column-gap: 2px;
+    margin-right: 0px;
+    grid-template-columns: 95px 1fr;
     grid-template-areas:
     'stickyTabs headerBody'
     'stickyTabs bioTitle'
@@ -234,8 +233,10 @@ a {
   #stickyTabs {
     font-size: 48px;
     width: 79px;
+    border-right: 3px #090909 solid;
   }
+
   li {
-    padding: 24px 11px 30px;
+    padding: 24px 11.4px 30px;
   }
 }
