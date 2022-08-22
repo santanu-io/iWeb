@@ -1,4 +1,5 @@
-var html = '<ul>\
+var html = '<img src="misc/science-svgrepo-com.svg">\
+            <ul>\
               <li class="bioTitle"><a href="#bioTitle">bio</a></li>\
               <li class="researchTitle"><a href="#researchTitle">research</a></li>\
               <li class="codesTitle"><a href="#codesTitle">codes</a></li>\
@@ -29,6 +30,7 @@ window.addEventListener('scroll', ()=> {
 })
 
 
+/*
 var elements = document.querySelectorAll("#bioTitle,#bioBody,#researchTitle,#researchBody,#codesTitle,#codesBody");
 
 var url = 'newData.txt';
@@ -53,3 +55,4 @@ function myFunction()
 function refreshPage() {
   window.location.reload();
 }
+*/

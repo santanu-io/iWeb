@@ -11,12 +11,6 @@
   --stickyTabsBackgroundColor: #f6f5f1;
 }
 
-fontSect {font-size: calc(28px + 0.8vh); font-family: 'barlow-thin';}
-fontHead {font-size: calc(28px + 0.6vh); font-family: 'barlow-semibold';}
-fontList {font-size: calc(18px + 0.5vh); font-family: 'barlow-medium';}
-fontBody {font-size: calc(16px + 0.4vh); font-family: 'barlow-regular';}
-fontMini {font-size: calc(12px + 0.2vh); font-family: 'barlow-thin';}
-
 /* Fonts imported*/
 @font-face {
   src: url('fonts/BarlowSemiCondensed-Thin.ttf');
@@ -38,6 +32,12 @@ fontMini {font-size: calc(12px + 0.2vh); font-family: 'barlow-thin';}
   src: url('fonts/BarlowSemiCondensed-Bold.ttf');
   font-family: 'barlow-bold';
 }
+
+fontSect {font-size: calc(28px + 0.8vh); font-family: 'barlow-thin';}
+fontHead {font-size: calc(26px + 0.6vh); font-family: 'barlow-semibold';}
+fontList {font-size: calc(18px + 0.5vh); font-family: 'barlow-medium';}
+fontBody {font-size: calc(16px + 0.4vh); font-family: 'barlow-regular';}
+fontMini {font-size: calc(12px + 0.2vh); font-family: 'barlow-thin';}
 
 html {
   scroll-behavior: smooth;
@@ -64,17 +64,6 @@ body {
 #researchBody {grid-area: researchBody}
 #codesBody {grid-area: codesBody}
 
-
-/* vertical line attributes*/
-/*
-#vl {
-  border-right: 1.5px #9d9d9d solid;
-  position: absolute;
-  left: 49px;
-  height: 200vh;
-}
-*/
-
 /* container for the sticky tabs*/
 #stickyTabs {
   display: block;
@@ -85,6 +74,10 @@ body {
   margin-left: -8px;
   width: 47px;
   border-right: 1px #090909 solid;
+}
+
+ul {
+  margin-top: 0;
 }
 
 li {
@@ -104,11 +97,10 @@ li {
 fhA {font-family: 'barlow-thin'; font-size: calc(5vmin + 24px);}
 fhB {font-family: 'barlow-medium'; font-size: calc(2vmin + 16px);}
 
-#headerTitle{
-  margin-right: 20px;
-  border-right: 8px #000000 solid;
+#vLine {
+  border-right: 10px black solid;
+  height: 100%;
 }
-
 #headerBody {
   display: flex;
   padding-left: 0px;
@@ -119,7 +111,6 @@ fhB {font-family: 'barlow-medium'; font-size: calc(2vmin + 16px);}
 #headerText > hr{
   width: 30px;
   margin-left: 0;
-  margin-top: 30px;
   margin-bottom: 0;
   margin-top: 10px;
   background-color: #1b180d;
@@ -135,7 +126,7 @@ fhB {font-family: 'barlow-medium'; font-size: calc(2vmin + 16px);}
 
 /* attributes for the different segments */
 #bioBody, #researchBody, #codesBody {text-align: justify;}
-#codesTitle, #researchTitle, #bioTitle {
+#headerTitle, #codesTitle, #researchTitle, #bioTitle {
   font-family: 'barlow-medium';
   text-align: right;
   padding-right: 20px;
@@ -147,6 +138,11 @@ a {
   text-decoration: none;
   color: var(--defLinkColor);
   transition: all 0.30s ease-in;
+}
+
+#stickyTabs > img {
+  width: auto;
+  padding: 10px;
 }
 
 /* sticky tabs hover link attribute*/
@@ -175,59 +171,54 @@ a {
 /* grid construction*/
 .grid {
   display: grid;
-  column-gap: 10px;
+  column-gap: 0px;
   row-gap: 40px;
-  grid-template-columns: 46px 1fr 130px 1040px 2fr;
+  grid-template-columns: 46px 1fr 140px 1040px 2fr;
   grid-template-rows: 150px auto;
   margin-top: -8px;
   grid-template-areas:
-  "stickyTabs spaceLeft headerTitle headerBody spaceRight"
-  "stickyTabs spaceLeft bioTitle bioBody spaceRight"
-  "stickyTabs spaceLeft researchTitle researchBody spaceRight"
-  "stickyTabs spaceLeft codesTitle codesBody spaceRight";
+  'stickyTabs spaceLeft headerTitle headerBody spaceRight'
+  'stickyTabs spaceLeft bioTitle bioBody spaceRight'
+  'stickyTabs spaceLeft researchTitle researchBody spaceRight'
+  'stickyTabs spaceLeft codesTitle codesBody spaceRight';
 }
 
-@media screen and (max-width: 1340px) {
-  .grid {
-      grid-template-columns: 46px 5px 1fr 8fr 20px;
-    }
+@media screen and (max-width: 1295px) {
+  .grid {grid-template-columns: 46px 2px 1fr 8fr 10px;}
 }
 
 @media screen and (max-width: 600px) {
   .grid {
-    grid-template-columns: 46px 1fr;
+    grid-template-columns: 46px 5px auto 5px;
     grid-template-areas:
-    'stickyTabs headerBody'
-    'stickyTabs bioTitle'
-    'stickyTabs bioBody'
-    'stickyTabs researchTitle'
-    'stickyTabs researchBody'
-    'stickyTabs codesTitle'
-    'stickyTabs codesBody';
+    'stickyTabs spaceLeft headerBody spaceRight'
+    'stickyTabs spaceLeft bioTitle spaceRight'
+    'stickyTabs spaceLeft bioBody spaceRight'
+    'stickyTabs spaceLeft researchTitle spaceRight'
+    'stickyTabs spaceLeft researchBody spaceRight'
+    'stickyTabs spaceLeft codesTitle spaceRight'
+    'stickyTabs spaceLeft codesBody spaceRight';
   }
-  #codesTitle, #researchTitle, #bioTitle {
-    margin-top: 0px;
+  #headerTitle, #codesTitle, #researchTitle, #bioTitle {
     text-align: left;
+    padding-right: 0;
   }
 }
 
 /* Mobile Phones */
 @media screen and (max-device-width: 480px) {
   .grid {
-    column-gap: 2px;
-    margin-right: 0px;
-    grid-template-columns: 95px 1fr;
+    grid-template-columns: 95px 5px 1fr 5px;
     grid-template-areas:
-    'stickyTabs headerBody'
-    'stickyTabs bioTitle'
-    'stickyTabs bioBody'
-    'stickyTabs researchTitle'
-    'stickyTabs researchBody'
-    'stickyTabs codesTitle'
-    'stickyTabs codesBody';
+    'stickyTabs spaceLeft headerBody spaceRight'
+    'stickyTabs spaceLeft bioTitle spaceRight'
+    'stickyTabs spaceLeft bioBody spaceRight'
+    'stickyTabs spaceLeft researchTitle spaceRight'
+    'stickyTabs spaceLeft researchBody spaceRight'
+    'stickyTabs spaceLeft codesTitle spaceRight'
+    'stickyTabs spaceLeft codesBody spaceRight';
   }
   #codesTitle, #researchTitle, #bioTitle {
-    margin-top: 0px;
     text-align: left;
   }
   #stickyTabs {
@@ -235,8 +226,6 @@ a {
     width: 79px;
     border-right: 3px #090909 solid;
   }
-
-  li {
-    padding: 24px 11.4px 30px;
-  }
+  #headerText > hr {height: 3px;}
+  li {padding: 24px 11.4px 30px;}
 }
